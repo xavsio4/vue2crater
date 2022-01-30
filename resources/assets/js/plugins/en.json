@@ -193,7 +193,8 @@
     "confirm_delete": "You will not be able to recover this customer and all the related Invoices, Estimates and Payments. | You will not be able to recover these customers and all the related Invoices, Estimates and Payments.",
     "created_message": "Customer created successfully",
     "updated_message": "Customer updated successfully",
-    "deleted_message": "Customer deleted successfully | Customers deleted successfully"
+    "deleted_message": "Customer deleted successfully | Customers deleted successfully",
+    "check_vat": "Check Vat"
   },
   "items": {
     "title": "Items",

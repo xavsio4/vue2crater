@@ -29,6 +29,7 @@ use Crater\Http\Controllers\V1\General\LanguagesController;
 use Crater\Http\Controllers\V1\General\NotesController;
 use Crater\Http\Controllers\V1\General\SearchController;
 use Crater\Http\Controllers\V1\General\TimezonesController;
+use Crater\Http\Controllers\V1\General\VatValidationController;
 use Crater\Http\Controllers\V1\Invoice\ChangeInvoiceStatusController;
 use Crater\Http\Controllers\V1\Invoice\CloneInvoiceController;
 use Crater\Http\Controllers\V1\Invoice\InvoicesController;
@@ -176,6 +177,8 @@ Route::prefix('/v1')->group(function () {
         Route::get('/languages', LanguagesController::class);
 
         Route::get('/next-number', NextNumberController::class);
+
+        Route::get('/vat-validation', VatValidationController::class);
 
 
         // Self Update

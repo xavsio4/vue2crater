@@ -258,6 +258,18 @@
                 name="vatid"
               />
             </sw-input-group>
+            <sw-button
+              v-if="!billing.check_vat"
+              :loading="isLoading"
+              :disabled="isLoading"
+              variant="secondary"
+              type="button"
+              class="h-8 px-3 py-1 mb-4"
+              @click="checkvat"
+              size="sm"
+            >
+              {{ $t('customers.check_vat') }}
+            </sw-button>
           </div>
         </div>
 
@@ -762,6 +774,15 @@ export default {
         this.countries = res.data.countries
       }
       this.initLoad = false
+    },
+    async checkvat() {
+      let res = await window.axios.get(
+        '/api/v1/vat-validation?vatid=' + this.billing.vatid
+      )
+      if (res.data) {
+        //
+      }
+      this.billing.check_vat = res.data
     },
     copyAddress(val) {
       if (val === true) {

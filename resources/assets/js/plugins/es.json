@@ -192,7 +192,8 @@
     "confirm_delete": "No podrá recuperar este cliente y todas las facturas, estimaciones y pagos relacionados. | No podrá recuperar estos clientes y todas las facturas, estimaciones y pagos relacionados.",
     "created_message": "Cliente creado con éxito",
     "updated_message": "Cliente actualizado con éxito",
-    "deleted_message": "Cliente eliminado correctamente | Clientes eliminados exitosamente"
+    "deleted_message": "Cliente eliminado correctamente | Clientes eliminados exitosamente",
+    "check_vat": "Verificar IVA"
   },
   "items": {
     "title": "Artículos",

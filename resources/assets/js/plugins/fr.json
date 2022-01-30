@@ -192,7 +192,8 @@
     "confirm_delete": "Vous ne pourrez pas récupérer ce client et les devis, factures et paiements associés. | Vous ne serez pas en mesure de récupérer ces clients et les devis, factures et paiements associés.",
     "created_message": "Client créé avec succès",
     "updated_message": "Client mis à jour avec succès",
-    "deleted_message": "Client supprimé avec succès | Les clients supprimés avec succès"
+    "deleted_message": "Client supprimé avec succès | Les clients supprimés avec succès",
+    "check_vat": "Vérifier Tva"
   },
   "items": {
     "title": "Articles",
