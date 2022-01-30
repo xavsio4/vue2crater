@@ -143,6 +143,7 @@
     "add_customer": "Ajouter un client",
     "contacts_list": "Liste de clients",
     "name": "Nom",
+    "vatid": "TVA",
     "mail": "Email | Emails",
     "statement": "Statement",
     "display_name": "Statut et Nom de la société",
@@ -671,6 +672,7 @@
     "company_info": {
       "company_info": "Information de l'entreprise",
       "company_name": "Nom de l'entreprise",
+      "vatid": "TVA",
       "company_logo": "Logo de l'entreprise",
       "section_description": "Informations sur votre entreprise qui figureront sur les factures, devis et autres documents créés par Crater.",
       "phone": "Téléphone",

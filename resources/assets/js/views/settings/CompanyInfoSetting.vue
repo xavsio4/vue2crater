@@ -71,6 +71,19 @@
           />
         </sw-input-group>
 
+        <sw-input-group
+          :label="$tc('settings.company_info.vatid')"
+          :error="nameError"
+          required
+        >
+          <sw-input
+            v-model="formData.vatid"
+            :placeholder="$t('settings.company_info.vatid')"
+            class="mt-2"
+            @input="$v.formData.vatid.$touch()"
+          />
+        </sw-input-group>
+
         <sw-input-group :label="$tc('settings.company_info.phone')">
           <sw-input
             v-model="formData.phone"
@@ -179,6 +192,8 @@ export default {
       isFetchingData: false,
       formData: {
         name: null,
+        vatid: null,
+        vat_check: 0,
         email: '',
         phone: '',
         zip: '',
@@ -235,6 +250,14 @@ export default {
       if (!this.$v.formData.name.required) {
         return this.$tc('validation.required')
       }
+    },
+    vatidError() {
+      if (!this.$v.formData.vatid.$error) {
+        return ''
+      }
+      /*if (!this.$v.formData.vatid.required) {
+        return this.$tc('validation.required')
+      }*/
     },
     countryError() {
       if (!this.$v.formData.country_id.$error) {
@@ -300,6 +323,7 @@ export default {
         this.formData.state = response.data.user.company.address.state
         this.formData.city = response.data.user.company.address.city
         this.country = response.data.user.company.address.country
+        this.formData.vatid = response.data.user.company.address.vatid
         this.previewLogo = response.data.user.company.logo
       }
       this.isRequestOnGoing = false

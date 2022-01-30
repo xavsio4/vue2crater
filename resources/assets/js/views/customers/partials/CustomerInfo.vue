@@ -25,6 +25,7 @@
             }}
           </p>
         </div>
+
         <div>
           <p
             class="mb-1 text-sm font-normal leading-5 non-italic text-primary-800"
@@ -205,6 +206,9 @@ export default {
       if (this.selectedViewCustomer.customer.billing_address.address_street_2) {
         billingAddress += `<span>${this.selectedViewCustomer.customer.billing_address.address_street_2},</span><br>`
       }
+      if (this.selectedViewCustomer.customer.billing_address.zip) {
+        billingAddress += `<span>${this.selectedViewCustomer.customer.billing_address.zip}.</span> `
+      }
       if (this.selectedViewCustomer.customer.billing_address.city) {
         billingAddress += `<span>${this.selectedViewCustomer.customer.billing_address.city},</span> `
       }
@@ -214,8 +218,9 @@ export default {
       if (this.selectedViewCustomer.customer.billing_address.country) {
         billingAddress += `<span>${this.selectedViewCustomer.customer.billing_address.country.name}.</span> `
       }
-      if (this.selectedViewCustomer.customer.billing_address.zip) {
-        billingAddress += `<span>${this.selectedViewCustomer.customer.billing_address.zip}.</span> `
+
+      if (this.selectedViewCustomer.customer.billing_address.vatid) {
+        billingAddress += `<br/><span>VAT ${this.selectedViewCustomer.customer.billing_address.vatid}.</span> `
       }
       return billingAddress
     },

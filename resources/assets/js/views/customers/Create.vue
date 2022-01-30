@@ -193,6 +193,15 @@
               />
             </sw-input-group>
 
+            <sw-input-group :label="$t('customers.zip_code')">
+              <sw-input
+                v-model.trim="billing.zip"
+                tabindex="14"
+                type="text"
+                name="zip"
+              />
+            </sw-input-group>
+
             <sw-input-group :label="$t('customers.city')" class="md:col-span-3">
               <sw-input
                 v-model="billing.city"
@@ -240,16 +249,15 @@
                   tabindex="13"
                 />
               </sw-input-group>
-
-              <sw-input-group :label="$t('customers.zip_code')">
-                <sw-input
-                  v-model.trim="billing.zip"
-                  tabindex="14"
-                  type="text"
-                  name="zip"
-                />
-              </sw-input-group>
             </div>
+            <sw-input-group :label="$t('customers.vatid')">
+              <sw-input
+                v-model.trim="billing.vatid"
+                tabindex="14"
+                type="text"
+                name="vatid"
+              />
+            </sw-input-group>
           </div>
         </div>
 
@@ -476,6 +484,7 @@ export default {
         name: null,
         contact_name: null,
         email: null,
+        vatid: null,
         phone: null,
         currency_id: null,
         website: null,
@@ -491,6 +500,7 @@ export default {
         zip: null,
         address_street_1: null,
         address_street_2: null,
+        vatid: null,
         type: 'billing',
       },
       shipping: {
@@ -563,11 +573,12 @@ export default {
         billing.name ||
         billing.country_id ||
         billing.state ||
+        billing.zip ||
         billing.city ||
         billing.phone ||
-        billing.zip ||
         billing.address_street_1 ||
-        billing.address_street_2
+        billing.address_street_2 ||
+        billing.vat_id
       ) {
         return true
       }
@@ -611,6 +622,15 @@ export default {
       if (!this.$v.formData.email.email) {
         return this.$tc('validation.email_incorrect')
       }
+    },
+    vatidError() {
+      if (!this.$v.formData.vatid.$error) {
+        return ''
+      }
+
+      /* if (!this.$v.formData.vatid.email) {
+        return this.$tc('validation.vatid_incorrect')
+      }*/
     },
     urlError() {
       if (!this.$v.formData.website.$error) {

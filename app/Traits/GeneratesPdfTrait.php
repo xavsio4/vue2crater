@@ -126,6 +126,7 @@ trait GeneratesPdfTrait
             '{SHIPPING_ADDRESS_STREET_2}' => $shippingAddress->address_street_2,
             '{SHIPPING_PHONE}' => $shippingAddress->phone,
             '{SHIPPING_ZIP_CODE}' => $shippingAddress->zip,
+            '{SHIPPING_VAT}' => $shippingAddress->vatid,
             '{BILLING_ADDRESS_NAME}' => $billingAddress->name,
             '{BILLING_COUNTRY}' => $billingAddress->country_name,
             '{BILLING_STATE}' => $billingAddress->state,
@@ -134,6 +135,7 @@ trait GeneratesPdfTrait
             '{BILLING_ADDRESS_STREET_2}' => $billingAddress->address_street_2,
             '{BILLING_PHONE}' => $billingAddress->phone,
             '{BILLING_ZIP_CODE}' => $billingAddress->zip,
+            '{BILLING_VAT}' => $billingAddress->vatid,
             '{COMPANY_NAME}' => $this->company->name,
             '{COMPANY_COUNTRY}' => $companyAddress->country_name,
             '{COMPANY_STATE}' => $companyAddress->state,
@@ -147,6 +149,7 @@ trait GeneratesPdfTrait
             '{CONTACT_EMAIL}' => $customer->email,
             '{CONTACT_PHONE}' => $customer->phone,
             '{CONTACT_WEBSITE}' => $customer->website,
+            '{COMPANY_VAT}' => $companyAddress->vatid
         ];
 
         $customFields = $this->fields;

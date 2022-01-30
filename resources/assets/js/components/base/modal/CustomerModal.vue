@@ -35,6 +35,18 @@
             </sw-input-group>
 
             <sw-input-group
+              :label="$t('customers.vatid')"
+              class="mt-4"
+              variant="horizontal"
+            >
+              <sw-input
+                v-model="formData.vatid"
+                type="text"
+                class="mt-1 md:mt-0"
+              />
+            </sw-input-group>
+
+            <sw-input-group
               :label="$t('login.email')"
               :error="emailError"
               class="mt-4"
@@ -380,6 +392,7 @@ export default {
       formData: {
         id: null,
         name: null,
+        vatid: null,
         currency_id: null,
         phone: null,
         website: null,
@@ -591,6 +604,7 @@ export default {
     resetData() {
       this.formData = {
         name: null,
+        vatid: null,
         currency_id: null,
         phone: null,
         website: null,
@@ -655,6 +669,7 @@ export default {
     async setData() {
       this.formData.id = this.modalData.id
       this.formData.name = this.modalData.name
+      this.formData.vatid = this.modalData.vatid
       this.formData.email = this.modalData.email
       this.formData.contact_name = this.modalData.contact_name
       this.formData.phone = this.modalData.phone

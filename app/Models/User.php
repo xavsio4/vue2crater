@@ -49,7 +49,9 @@ class User extends Authenticatable implements HasMedia
         'contact_name',
         'website',
         'enable_portal',
-        'creator_id'
+        'creator_id',
+        'vatid', 
+        'vat_check'
     ];
 
     /**

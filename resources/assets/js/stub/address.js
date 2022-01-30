@@ -1,5 +1,6 @@
 export default {
   name: null,
+  vatid: null,
   phone: null,
   address_street_1: null,
   address_street_2: null,

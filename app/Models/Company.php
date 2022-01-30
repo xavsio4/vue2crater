@@ -16,7 +16,7 @@ class Company extends Model implements HasMedia
 
     use HasFactory;
 
-    protected $fillable = ['name', 'logo', 'unique_hash'];
+    protected $fillable = ['name', 'logo', 'unique_hash','vatid','vat_check'];
 
     protected $appends = ['logo', 'logo_path'];
 
