@@ -87,7 +87,9 @@
     "choose_note": "Choose Note",
     "no_note_found": "No Note Found",
     "insert_note": "Insert Note",
-    "copied_pdf_url_clipboard": "Copied PDF url to clipboard!"
+    "copied_pdf_url_clipboard": "Copied PDF url to clipboard!",
+    "check_vat_valid": "Vat is valid",
+    "check_vat_not_valid": "Vat is not valid"
   },
   "dashboard": {
     "select_year": "Select year",
@@ -194,7 +196,7 @@
     "created_message": "Customer created successfully",
     "updated_message": "Customer updated successfully",
     "deleted_message": "Customer deleted successfully | Customers deleted successfully",
-    "check_vat": "Check Vat"
+    "vat_check": "Check Vat"
   },
   "items": {
     "title": "Items",

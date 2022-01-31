@@ -258,17 +258,24 @@
                 name="vatid"
               />
             </sw-input-group>
+            <check-circle-icon
+              v-if="billing.vat_check"
+              class="text-green-300 mt-9 mr-1 -ml-2"
+            />
+            <ban-icon
+              v-else="!billing.vat_check"
+              class="text-red-300 mt-9 mr-1 -ml-2"
+            />
             <sw-button
-              v-if="!billing.check_vat"
               :loading="isLoading"
               :disabled="isLoading"
-              variant="secondary"
+              variant="primary"
               type="button"
-              class="h-8 px-3 py-1 mb-4"
+              class="h-10 px-3 py-1 mt-7"
               @click="checkvat"
               size="sm"
             >
-              {{ $t('customers.check_vat') }}
+              {{ $t('customers.vat_check') }}
             </sw-button>
           </div>
         </div>
@@ -472,7 +479,11 @@ import AddressStub from '../../stub/address'
 import { mapActions, mapGetters } from 'vuex'
 import _ from 'lodash'
 import CustomFieldsMixin from '../../mixins/customFields'
-import { DocumentDuplicateIcon } from '@vue-hero-icons/solid'
+import {
+  DocumentDuplicateIcon,
+  CheckCircleIcon,
+  BanIcon,
+} from '@vue-hero-icons/solid'
 
 const {
   required,
@@ -485,6 +496,8 @@ const {
 export default {
   components: {
     DocumentDuplicateIcon,
+    CheckCircleIcon,
+    BanIcon,
   },
   mixins: [CustomFieldsMixin],
   data() {
@@ -513,6 +526,7 @@ export default {
         address_street_1: null,
         address_street_2: null,
         vatid: null,
+        vat_check: null,
         type: 'billing',
       },
       shipping: {
@@ -590,7 +604,8 @@ export default {
         billing.phone ||
         billing.address_street_1 ||
         billing.address_street_2 ||
-        billing.vat_id
+        billing.vatid ||
+        billing.vat_check
       ) {
         return true
       }
@@ -779,10 +794,18 @@ export default {
       let res = await window.axios.get(
         '/api/v1/vat-validation?vatid=' + this.billing.vatid
       )
-      if (res.data) {
-        //
+      if (res.data.vat_check === true) {
+        this.showNotification({
+          type: 'success',
+          message: this.$t('general.check_vat_valid'),
+        })
+      } else {
+        this.showNotification({
+          type: 'error',
+          message: this.$t('general.check_vat_not_valid'),
+        })
       }
-      this.billing.check_vat = res.data
+      this.billing.vat_check = res.data.vat_check
     },
     copyAddress(val) {
       if (val === true) {

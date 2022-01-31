@@ -86,7 +86,9 @@
     "retry": "Procesar de nuevo",
     "choose_note": "Elegir nota",
     "no_note_found": "No se encontró ninguna nota",
-    "insert_note": "Insertar una nota"
+    "insert_note": "Insertar una nota",
+    "check_vat_valid": "IVA es valido",
+    "check_vat_not_valid": "IVA no es valido"
   },
   "dashboard": {
     "select_year": "Seleccionar año",
@@ -193,7 +195,7 @@
     "created_message": "Cliente creado con éxito",
     "updated_message": "Cliente actualizado con éxito",
     "deleted_message": "Cliente eliminado correctamente | Clientes eliminados exitosamente",
-    "check_vat": "Verificar IVA"
+    "vat_check": "Verificar IVA"
   },
   "items": {
     "title": "Artículos",

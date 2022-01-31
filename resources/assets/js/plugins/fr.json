@@ -86,7 +86,9 @@
     "retry": "Réessayez",
     "choose_note": "Choisissez une note",
     "no_note_found": "Aucune note trouvée",
-    "insert_note": "Insérer une note"
+    "insert_note": "Insérer une note",
+    "check_vat_valid": "Tva valide",
+    "check_vat_not_valid": "Tva invalide"
   },
   "dashboard": {
     "select_year": "Sélectionnez l'année",
@@ -193,7 +195,7 @@
     "created_message": "Client créé avec succès",
     "updated_message": "Client mis à jour avec succès",
     "deleted_message": "Client supprimé avec succès | Les clients supprimés avec succès",
-    "check_vat": "Vérifier Tva"
+    "vat_check": "Vérifier Tva"
   },
   "items": {
     "title": "Articles",
